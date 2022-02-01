@@ -1,23 +1,41 @@
-import logo from './logo.svg';
-import './App.css';
+import { useEffect } from "react";
+import { Routes, Route } from "react-router-dom";
+import SignIn from "./components/SignIn";
+import NavBar from "./components/NavBar";
+import PopularMovie from "./components/PopularMovie";
+import TopRatedMovie from "./components/TopRatedMovie";
+import Detail from "./pages/Detail";
+import Home from "./pages/Home";
+import { useSelector } from "react-redux";
+import { theme } from "./reduxStore/theme";
+import { ThemeProvider } from "styled-components";
+import { styledComponentTheme } from "./styledComponents";
+import Login from "./components/Login";
+import Profile from "./components/Profile";
 
 function App() {
+  const theme_info = useSelector((state) => state.theme);
+
+  useEffect(() => {
+    theme_info === "white"
+      ? (document.body.style.backgroundColor = "white")
+      : (document.body.style.backgroundColor = "black");
+  }, [theme_info]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <ThemeProvider theme={styledComponentTheme[theme_info]}>
+        <NavBar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="popular-movie" element={<PopularMovie />} />
+          <Route path="top-rated-movie" element={<TopRatedMovie />} />
+          <Route path="/:movieId" element={<Detail />} />
+          <Route path="/sign-in" element={<SignIn />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/profile" element={<Profile />} />
+        </Routes>
+      </ThemeProvider>
     </div>
   );
 }
