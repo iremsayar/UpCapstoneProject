@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { LoginSelect } from "../styledComponents";
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import * as Yup from "yup";
@@ -11,7 +11,6 @@ import { BsFillXCircleFill } from "react-icons/bs";
 import { BsEmojiDizzyFill } from "react-icons/bs";
 import { BsEmojiSunglassesFill } from "react-icons/bs";
 import { BsFillEmojiWinkFill } from "react-icons/bs";
-import { useState } from "react/cjs/react.development";
 import { Link } from "react-router-dom";
 
 function Login() {

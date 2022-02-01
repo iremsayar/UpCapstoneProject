@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { LoginSelect, MovieSelect, Nav } from "../styledComponents";
 import { Link, useLocation, useHistory, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
@@ -8,7 +8,6 @@ import ChangeThemeButton from "./ChangeThemeButton";
 import { ItemLink } from "../styledComponents";
 import { FcFilmReel } from "react-icons/fc";
 import { VscThreeBars } from "react-icons/vsc";
-import { useState } from "react/cjs/react.development";
 
 function NavBar() {
   let navigate = useNavigate();
