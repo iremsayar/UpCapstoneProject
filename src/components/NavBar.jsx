@@ -64,7 +64,7 @@ function NavBar() {
               className="outline-none"
               onChange={(event) => handleChange(event.target.value)}
               onClick={(e) => {
-                console.log(e.target.value);
+                // console.log(e.target.value);
                 e.target.value === "/" && dispatch(goProfile(false));
                 e.target.value === "/" && dispatch(userInfo({}));
               }}
@@ -114,7 +114,7 @@ function NavBar() {
                 className="outline-none"
                 onChange={(event) => handleChange(event.target.value)}
                 onClick={(e) => {
-                  console.log(e.target.value);
+                  // console.log(e.target.value);
                   e.target.value === "/" && dispatch(goProfile(false));
                   e.target.value === "/" && dispatch(userInfo({}));
                 }}

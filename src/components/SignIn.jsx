@@ -25,17 +25,17 @@ const Schema = Yup.object().shape({
 });
 function SignIn() {
   let navigate = useNavigate();
-  // console.log("navigate::::", navigate);
-  // console.log("location::::", location);
+  // // console.log("navigate::::", navigate);
+  // // console.log("location::::", location);
   function handleChange() {
     navigate("login");
   }
 
   const theme_info = useSelector((state) => state.theme);
   const user_info = useSelector((state) => state.userInfo);
-  console.log(user_info);
+  // // console.log(user_info);
   const dispatch = useDispatch();
-  // console.log(state);
+  // // console.log(state);
   return (
     <div>
       <Formik
