@@ -1,6 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
 import { useQuery } from "react-query";
-import { useState } from "react/cjs/react.development";
 import { DivTitles, MovieSelect } from "../styledComponents";
 import { DivImages } from "../styledComponents";
 import { FcLikePlaceholder } from "react-icons/fc";
