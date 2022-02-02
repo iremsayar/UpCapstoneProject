@@ -2,10 +2,11 @@ import React from "react";
 import { BsToggleOff } from "react-icons/bs";
 import { BsToggleOn } from "react-icons/bs";
 import { FaSun } from "react-icons/fa";
+import { FcIdea } from "react-icons/fc";
+import { FcNoIdea } from "react-icons/fc";
 import { BsMoonStarsFill } from "react-icons/bs";
 import { useSelector, useDispatch } from "react-redux";
 import { theme } from "../reduxStore/theme";
-import { OutlineButton } from "../styledComponents";
 
 function ChangeThemeButton() {
   const state = useSelector((state) => state);
@@ -24,21 +25,19 @@ function ChangeThemeButton() {
       >
         {theme_info === "dark" ? (
           <div className="flex items-center">
-            <BsToggleOn
+            <FcNoIdea
               className={`${
                 theme_info === "dark" ? "text-white" : "text-stone-600"
-              } w-16 h-16 mx-4`}
+              } w-12 h-12 mx-4`}
             />
-            <BsMoonStarsFill className="text-cyan-600 w-9 h-9" />
           </div>
         ) : (
           <div className="flex items-center">
-            <BsToggleOff
+            <FcIdea
               className={`${
                 theme_info === "dark" ? "text-white" : "text-stone-600"
-              } w-16 h-16 mx-4`}
+              } w-12 h-12 mx-4`}
             />
-            <FaSun className="text-yellow-300 w-9 h-9" />
           </div>
         )}
       </button>

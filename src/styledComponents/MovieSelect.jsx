@@ -1,12 +1,11 @@
 import styled from "styled-components";
 
 const MovieSelect = styled.select`
-  height: 45px;
+  height: 40px;
   background: ${({ theme }) => theme.SelectBg};
   color: #ffffff;
-  padding-left: 5px;
+  padding: 10px 10px;
   font-size: 20px;
-  font-weight: 900;
   border: none;
   border-radius: 20px;
   padding: 0 1rem;

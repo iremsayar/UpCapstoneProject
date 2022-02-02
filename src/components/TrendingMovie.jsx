@@ -31,7 +31,7 @@ function TrendingMovie() {
       retry: false,
     }
   );
-  console.log("Trending", Trending);
+  // console.log("Trending", Trending);
   const POSTER_BASE_URL = "https://image.tmdb.org/t/p/w500";
 
   return (
@@ -40,7 +40,7 @@ function TrendingMovie() {
         className="outline-none"
         onChange={(e) => {
           setType(e.target.value);
-          // console.log("tending::::::", type);
+          // // console.log("tending::::::", type);
         }}
       >
         <option value="day">Today</option>

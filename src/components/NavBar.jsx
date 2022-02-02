@@ -20,7 +20,8 @@ function NavBar() {
   const dispatch = useDispatch();
   function handleChange(value) {
     navigate(`${value}`);
-
+    value === "/" && dispatch(goProfile(false));
+    value === "/" && dispatch(userInfo({}));
     value = "";
   }
 
@@ -58,6 +59,7 @@ function NavBar() {
           </div>
           <div className="flex w-full items-center justify-end">
             <ItemLink to="/">Home</ItemLink>
+            <ItemLink to="about">About</ItemLink>
             {go_profile && <ItemLink to="profile">Profile</ItemLink>}
             <LoginSelect
               className="outline-none"
@@ -95,7 +97,7 @@ function NavBar() {
       </Nav>
       <div className="lg:hidden">
         {mobileNav && (
-          <div className="flex flex-col w-full min-h-screen items-center ">
+          <div className="flex flex-col w-full items-center ">
             <div className="flex my-8">
               <MovieSelect
                 className="outline-none"
@@ -108,15 +110,12 @@ function NavBar() {
             </div>
             <div className="flex flex-col w-full items-center justify-end">
               <ItemLink to="/">Home</ItemLink>
+              <ItemLink to="about">About</ItemLink>
               {go_profile && <ItemLink to="profile">Profile</ItemLink>}
               <LoginSelect
                 className="outline-none"
-                onChange={(event) => handleChange(event.target.value)}
-                onClick={(e) => {
-                  // console.log(e.target.value);
-                  e.target.value === "/" && dispatch(goProfile(false));
-                  e.target.value === "/" && dispatch(userInfo({}));
-                }}
+                // onChange={(event) => handleChange(event.target.value)}
+                onClick={(e) => handleChange(e.target.value)}
               >
                 {go_profile ? (
                   <option value="/">Sign out</option>

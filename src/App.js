@@ -12,6 +12,8 @@ import { ThemeProvider } from "styled-components";
 import { styledComponentTheme } from "./styledComponents";
 import Login from "./components/Login";
 import Profile from "./components/Profile";
+import About from "./pages/About";
+import Footer from "./components/Footer";
 
 function App() {
   const theme_info = useSelector((state) => state.theme);
@@ -28,6 +30,7 @@ function App() {
         <NavBar />
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="about" element={<About />} />
           <Route path="popular-movie" element={<PopularMovie />} />
           <Route path="top-rated-movie" element={<TopRatedMovie />} />
           <Route path="/:movieId" element={<Detail />} />
@@ -35,6 +38,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/profile" element={<Profile />} />
         </Routes>
+        <Footer />
       </ThemeProvider>
     </div>
   );

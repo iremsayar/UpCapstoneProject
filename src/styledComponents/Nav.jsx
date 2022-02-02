@@ -5,7 +5,7 @@ const Nav = styled.div`
   display: flex;
   width: 100%;
   height: 10vh;
-  border-bottom: 3px solid;
+  border-bottom: 2px solid;
   border-bottom-color: #b1aeaec6;
   font-size: 30px;
   font-weight: 300;

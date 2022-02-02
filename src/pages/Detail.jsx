@@ -3,7 +3,7 @@ import { useQuery } from "react-query";
 import { useParams } from "react-router-dom";
 import { fetchCast, fetchMovies, fetchReview } from "../api";
 import styled from "styled-components";
-import { DivImages, DivTitles } from "../styledComponents";
+import { DivImages, DivTitles, TextDiv } from "../styledComponents";
 function Detail() {
   const params = useParams();
 
@@ -61,19 +61,19 @@ function Detail() {
           <div className="flex flex-col md:flex-row justify-between my-4">
             <div className="flex md:flex-col italic xl:text-xl lg:text-lg text-xs ">
               {MoviesData?.data?.data?.genres.map((item) => (
-                <div>
+                <TextDiv>
                   {item.name}
                   <span className="md:hidden">◯</span>
-                </div>
+                </TextDiv>
               ))}
             </div>
-            <div className="mr-2 xl:text-xl lg:text-lg text-xs">
+            <TextDiv className="mr-2 xl:text-xl lg:text-lg text-xs">
               {MoviesData?.data?.data?.release_date}
-            </div>
+            </TextDiv>
           </div>
-          <div className="mr-2 font-bold xl:text-2xl lg:text-xl">
+          <TextDiv className="mr-2 font-bold xl:text-2xl lg:text-xl">
             {MoviesData?.data?.data?.overview}
-          </div>
+          </TextDiv>
         </div>
       </div>
 

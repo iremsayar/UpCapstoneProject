@@ -27,14 +27,16 @@ function DiscoverMovie() {
     { retry: false }
   );
 
-  const GenreData = useQuery("discoverMovieGenre", fetchDiscoverGenre, {
-    retry: false,
-  });
-  const Genres = GenreData?.data?.data?.genres.map((item) => item.id);
+  // const GenreData = useQuery("discoverMovieGenre", fetchDiscoverGenre, {
+  //   retry: false,
+  // });
+  // const Genres = GenreData?.data?.data?.genres.map((item) => item.id);
   if (isLoading) return "Yükleniyor...";
 
   if (error) return "Hata meydana geldi: " + error.message;
   // console.log(data);
+
+  console.log(data);
 
   const POSTER_BASE_URL = "https://image.tmdb.org/t/p/w500";
   return (

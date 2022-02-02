@@ -9,6 +9,7 @@ import { FilterButton } from "./FilterButton";
 import { DateInput } from "./DateInput";
 import { LoginSelect } from "./LoginSelect";
 import { TextDiv } from "./TextDiv";
+import { FooterDiv } from "./FooterDiv";
 export {
   OutlineButton,
   DivTitles,
@@ -21,4 +22,5 @@ export {
   DateInput,
   LoginSelect,
   TextDiv,
+  FooterDiv,
 };

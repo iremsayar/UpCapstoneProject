@@ -3,7 +3,7 @@ export const styledComponentTheme = {
     NavColor: "white",
     OutlineBtnColor: "lightgray",
     OutlineBtnColorH: "lightgray",
-    TextColor: "black",
+    TextColor: "#858383",
     SelectBg: "#bbb9b9",
     LinkColor: "gray",
     LinkColorH: "black",

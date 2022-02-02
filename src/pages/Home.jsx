@@ -20,8 +20,7 @@ function Home() {
   // // console.log("search_movie", search_movie);
   const is_search = useSelector((state) => state.isSearch);
   const perPage = 3;
-  // const [pageCount, setPageCount] = useState(0);
-  const [selectedPage, setSelectedPage] = useState();
+  const [selectedPage, setSelectedPage] = useState(0);
 
   const SearchData = useQuery(
     ["SearchData", search_movie],
@@ -32,6 +31,7 @@ function Home() {
   );
   const handlePageClick = (data) => {
     setSelectedPage(data.selected * perPage);
+    console.log(selectedPage);
   };
   const POSTER_BASE_URL = "https://image.tmdb.org/t/p/w500";
   const dispatch = useDispatch();
@@ -79,8 +79,8 @@ function Home() {
               nextLabel={"↪"}
               breakLabel={"..."}
               pageCount={10}
-              marginPagesDisplayed={2}
-              pageRangeDisplayed={2}
+              marginPagesDisplayed={3}
+              pageRangeDisplayed={3}
               onPageChange={handlePageClick}
               containerClassName="flex justify-center"
               pageClassName="mx-1 p-2 text-gray-700 font-thin text-lg border-2 border-indigo-600 hover:border-indigo-300 hover:bg-indigo-100 hover:font-bold "

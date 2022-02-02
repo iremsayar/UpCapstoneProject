@@ -1,7 +1,6 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useQuery } from "react-query";
 import { Link } from "react-router-dom";
-import { useState } from "react/cjs/react.development";
 import { fetchPopularMovie } from "../api";
 import { DivImages, DivTitles, OutlineButton } from "../styledComponents";
 import useWindowSize from "../hooks/useWindowSize";

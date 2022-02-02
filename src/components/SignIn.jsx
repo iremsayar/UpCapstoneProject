@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { OutlineButton } from "../styledComponents";
@@ -8,6 +8,9 @@ import { userInfoLocal } from "../reduxStore/userInfoLocal";
 import { theme } from "../reduxStore/theme";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { TextDiv } from "../styledComponents";
+import { BsFillXCircleFill } from "react-icons/bs";
+import { MdOutlineDoneOutline } from "react-icons/md";
+
 const Schema = Yup.object().shape({
   username: Yup.string()
     .required("Username is required")
@@ -33,6 +36,7 @@ function SignIn() {
 
   const theme_info = useSelector((state) => state.theme);
   const user_info = useSelector((state) => state.userInfo);
+  const [show, setShow] = useState(false);
   // // console.log(user_info);
   const dispatch = useDispatch();
   // // console.log(state);
@@ -147,7 +151,9 @@ function SignIn() {
                   />
                 </div>
                 <div className="flex justify-center">
-                  <OutlineButton type="submit">Sign in</OutlineButton>
+                  <OutlineButton onClick={() => setShow(true)} type="submit">
+                    Sign in
+                  </OutlineButton>
                 </div>
                 <TextDiv className=" text-3xl text-center my-6 lg:my-20">
                   ...or login{" "}
@@ -162,6 +168,32 @@ function SignIn() {
           </Form>
         )}
       </Formik>
+
+      {show && user_info.acceptTerms && (
+        <div className="fixed top-0 left-0 bg-black/25 w-full h-full 	">
+          <div className="flex flex-col w-2/5 h-2/5   bg-white inset-x-1/2 translate-y-3/4 translate-x-3/4 rounded-3xl">
+            <div className="flex justify-end">
+              <BsFillXCircleFill
+                onClick={() => setShow(false)}
+                className="w-8 h-8 m-4"
+              />
+            </div>
+            <div className="flex flex-col items-center">
+              <div className="lg:text-xl md:text-lg text-xs text-green-600 font-bold  text-center">
+                Sign in successful.
+                <Link to="/login">
+                  <div className="lg:my-6 my-3 text-cyan-500	underline underline-offset-4 font-bold lg:m-0 lg:text-2xl md:text-lg text-xs">
+                    Login
+                  </div>
+                </Link>
+              </div>
+              <div className="">
+                <MdOutlineDoneOutline className="w-20 h-20 lg:w-28 lg:h-28 xl:w-30 xl:h-30 text-center text-green-400	animate-bounce lg:my-6 my-4" />
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
